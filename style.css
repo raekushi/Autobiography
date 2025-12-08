@@ -1,1 +1,330 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a; 
+}
+::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569; 
+}
+
+/* Pixelated Cursor */
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="black" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 3.5L5.5 17.5L8.5 14.5L11.5 20.5L14.5 19.5L11.5 13.5L16.5 13.5L5.5 3.5Z" stroke-width="1"/></svg>') 0 0, auto;
+}
+    
+a, button, .hobby-card, .clickable-school {
+    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="black" xmlns="http://www.w3.org/2000/svg"><path d="M9 2H11V4H9V2ZM11 4H13V6H11V4ZM13 6H15V8H13V6ZM5 8H7V10H5V8ZM7 10H9V12H7V10ZM9 12H11V14H9V12ZM15 8H17V14H15V8ZM17 14H19V18H17V14ZM11 14H13V16H11V14ZM13 16H15V22H13V16ZM7 14H9V22H7V14ZM5 10H3V18H5V10Z" stroke-width="0"/></svg>') 6 0, pointer;
+}
+
+/* Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Blob Background Animation */
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+    animation: move 10s infinite alternate;
+}
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(20px, -20px) scale(1.1); }
+}
+
+/* Hobby Card Interactions */
+.hobby-card {
+    transition: background-color 0.35s ease, box-shadow 0.35s ease, opacity 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+    
+.hobby-card.active {
+    grid-column: span 2;
+    transform: none; /* remove bouncy scaling */
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #38bdf8;
+    z-index: 10;
+    box-shadow: 0 12px 30px rgba(2,6,23,0.55);
+}
+
+@media (max-width: 768px) {
+    .hobby-card.active {
+        grid-column: span 1;
+    }
+}
+
+/* Make active hobby card use an Instagram-style 1:1 photo with title above and caption below */
+@media (min-width: 768px) {
+    /* keep active cards narrower on desktop */
+    .hobby-card.active {
+        grid-column: span 1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    .hobby-card .hobby-image {
+        /* default hidden state remains controlled by JS; ensure sizing when present */
+        display: block;
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        object-position: left center; /* slight left stretch/align */
+        border-radius: 12px;
+        margin: 0.25rem auto;
+        opacity: 1;
+    }
+    /* Slight left stretch/shift so the photo visually leans slightly left inside the frame */
+    .hobby-card.active .hobby-image {
+        transform: translateX(-6px);
+    }
+
+    /* Slightly larger on wider screens */
+    @media (min-width: 1024px) {
+        .hobby-card .hobby-image {
+            width: 220px;
+            height: 220px;
+        }
+    }
+
+    .hobby-card.active .hobby-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Title and icon sizing when active (placed just above the photo) */
+    .hobby-card.active .hobby-content h3 {
+        font-size: 1.125rem; /* 18px */
+        margin-bottom: 0.25rem;
+    }
+
+    .hobby-card.active .icon-container {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.25rem;
+    }
+
+    .hobby-card .icon-container i {
+        font-size: 1.1rem; /* adjust icon size */
+    }
+
+    .hobby-card.active .hobby-desc {
+        max-height: none;
+        opacity: 1;
+        margin-top: 0.5rem;
+    }
+}
+
+.hobby-image {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 360ms cubic-bezier(.4,0,.2,1), transform 360ms cubic-bezier(.4,0,.2,1);
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* When visible inside an active card, image fades/slides into place */
+.hobby-card.active .hobby-image {
+    opacity: 1;
+    transform: translateY(0);
+    margin-bottom: 1rem;
+}
+
+.hobby-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.hobby-card.active .hobby-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.icon-container {
+    transition: all 0.5s ease;
+}
+
+.hobby-card.active .icon-container {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    transform: scale(0.8);
+}
+
+.hobby-desc {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin-top: 0;
+}
+
+.hobby-card.active .hobby-desc {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 0.5rem;
+}
+
+/* Modal & Gallery Styles */
+#edu-modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#edu-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+#edu-modal:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+    
+.gallery-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeIn 0.5s ease;
+}
+.gallery-slide.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Make profile image fill the inner circular frame */
+#profile-img {
+    width: 72%;
+    height: 72%;
+    border-radius: 9999px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35) inset;
+}
+
+@media (min-width: 768px) {
+    #profile-img {
+        width: 66%;
+        height: 66%;
+    }
+}
+
+/* Vinyl-style animated rings (colorful, spinning grooves) */
+.outer-vinyl {
+    inset: 0;
+    border-radius: 9999px;
+    pointer-events: none;
+    border: 2px solid transparent;
+    /* gradient border like a colorful vinyl edge */
+    border-image: conic-gradient(
+        rgba(56,189,248,0.95),
+        rgba(129,140,248,0.95),
+        rgba(99,102,241,0.95),
+        rgba(14,165,233,0.95)
+    ) 1;
+    z-index: 2;
+    animation: vinyl-spin 10s linear infinite;
+}
+
+.outer-vinyl::after {
+    content: '';
+    position: absolute;
+    inset: 6px; /* place grooves inside the border */
+    border-radius: 9999px;
+    background: repeating-conic-gradient(
+        rgba(255,255,255,0.02) 0deg 2deg,
+        rgba(0,0,0,0.02) 2deg 4deg
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.65;
+    z-index: 1;
+    transform-origin: center;
+    animation: vinyl-groove 6s linear infinite reverse;
+}
+
+.inner-vinyl {
+    inset: 8px;
+    border-radius: 9999px;
+    pointer-events: none;
+    border: 2px solid transparent;
+    border-image: conic-gradient(
+        rgba(129,140,248,0.9),
+        rgba(56,189,248,0.85),
+        rgba(99,102,241,0.75)
+    ) 1;
+    z-index: 3;
+    animation: vinyl-spin 14s linear infinite reverse;
+}
+
+.inner-vinyl::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 9999px;
+    background: repeating-conic-gradient(
+        rgba(0,0,0,0.03) 0deg 2deg,
+        rgba(255,255,255,0.01) 2deg 4deg
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.55;
+    transform-origin: center;
+    animation: vinyl-groove 9s linear infinite;
+}
+
+@keyframes vinyl-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes vinyl-groove {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* Controlled float used only for the clicked hobby card (no bounce) */
+.float-effect {
+    animation: hobby-float 8s cubic-bezier(.4,0,.2,1) infinite;
+    will-change: transform;
+}
+
+@keyframes hobby-float {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-4px); }
+    50% { transform: translateY(-6px); }
+    75% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
 
