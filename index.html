@@ -1,162 +1,448 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autobiography of Frederick Lael P. Unabia</title>
+    <title>Frederick Lael P. Unabia | Autobiography</title>
     
-    <!-- Tailwind CSS (Handles layout and mobile view automatically) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome (For Icons) -->
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* This prevents the "draggable to right" issue by stopping horizontal overflow */
-        body {
-            overflow-x: hidden; 
-        }
-
-        /* Styles for the profile picture */
-        .profile-img-box {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%; /* Makes it circular */
-            background-color: #ddd; /* Gray placeholder color */
-            overflow: hidden;
-            border: 4px solid white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        /* Ensures the image fits inside the circle */
-        .profile-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="tw-config.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+<body class="bg-brand-dark text-gray-300 font-sans selection:bg-brand-accent selection:text-brand-dark overflow-x-hidden">
 
-    <!-- MAIN CONTAINER: Keeps everything centered and readable -->
-    <div class="max-w-3xl mx-auto bg-white shadow-xl min-h-screen">
-
-        <!-- SECTION 1: HEADER (Name & Photo) -->
-        <header class="bg-blue-600 text-white text-center py-10 px-4">
-            
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="profile-img-box">
-                <!-- INSTRUCTION: Replace 'placeholder.jpg' with your actual file name (e.g., 'me.jpg') -->
-                <img src="placeholder.jpg" alt="https://photos.google.com/photo/AF1QipMKJ1TwvZ1i8D-ee_qBK9Tjq9CvZCMOY6eUysE" onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
-            </div>
-
-            <!-- NAME & SHORT INTRO -->
-            <h1 class="text-3xl md:text-4xl font-bold mb-2">
-                [PUT YOUR FULL NAME HERE]
-            </h1>
-            <p class="text-blue-100 text-lg">
-                [PUT A SHORT 1-SENTENCE DESCRIPTION HERE]
-            </p>
-        </header>
-
-        <!-- CONTENT SECTIONS -->
-        <div class="p-6 md:p-10 space-y-8">
-
-            <!-- SECTION 2: INTRODUCTION -->
-            <section>
-                <h2 class="text-2xl font-bold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">
-                    <i class="fas fa-user mr-2"></i> About Me
-                </h2>
-                <p class="text-gray-600">
-                    [PUT SHORT INTRODUCTION ABOUT YOURSELF HERE. Example: Hello, I am a student living in... write 2-3 sentences about who you are.]
-                </p>
-            </section>
-
-            <!-- SECTION 3: EARLY LIFE -->
-            <section>
-                <h2 class="text-2xl font-bold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">
-                    <i class="fas fa-child mr-2"></i> Early Life
-                </h2>
-                <p class="text-gray-600">
-                    [PUT DETAILS ABOUT YOUR EARLY LIFE HERE. Where were you born? Where did you grow up? Mention a childhood memory.]
-                </p>
-            </section>
-
-            <!-- SECTION 4: EDUCATION -->
-            <section>
-                <h2 class="text-2xl font-bold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">
-                    <i class="fas fa-graduation-cap mr-2"></i> Education
-                </h2>
-                <ul class="list-disc list-inside text-gray-600 space-y-2">
-                    <li>
-                        <strong>[PUT COLLEGE/CURRENT SCHOOL HERE]</strong> 
-                        <br> <span class="text-sm text-gray-500 ml-5">[Year - Year] | [Course/Grade]</span>
-                    </li>
-                    <li>
-                        <strong>[PUT HIGH SCHOOL HERE]</strong> 
-                        <br> <span class="text-sm text-gray-500 ml-5">[Year - Year]</span>
-                    </li>
-                    <li>
-                        <strong>[PUT ELEMENTARY SCHOOL HERE]</strong> 
-                        <br> <span class="text-sm text-gray-500 ml-5">[Year - Year]</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- SECTION 5: HOBBIES & INTERESTS -->
-            <section>
-                <h2 class="text-2xl font-bold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">
-                    <i class="fas fa-heart mr-2"></i> Hobbies & Interests
-                </h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- Edit these items -->
-                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
-                        [PUT HOBBY 1 HERE]
-                    </div>
-                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
-                        [PUT HOBBY 2 HERE]
-                    </div>
-                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
-                        [PUT HOBBY 3 HERE]
-                    </div>
-                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
-                        [PUT HOBBY 4 HERE]
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 6: GOALS -->
-            <section>
-                <h2 class="text-2xl font-bold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">
-                    <i class="fas fa-bullseye mr-2"></i> Goals in Life
-                </h2>
-                <p class="text-gray-600 mb-2">[Write a sentence about your main goal here.]</p>
-                <ul class="list-decimal list-inside text-gray-600 space-y-1">
-                    <li>[PUT GOAL 1 HERE]</li>
-                    <li>[PUT GOAL 2 HERE]</li>
-                    <li>[PUT GOAL 3 HERE]</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 7: QUOTE -->
-            <section class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded my-8">
-                <blockquote class="italic text-lg text-gray-700 mb-2">
-                    "[PUT YOUR FAVORITE QUOTE TEXT HERE]"
-                </blockquote>
-                <cite class="block text-right font-bold text-gray-600">
-                    — [PUT AUTHOR NAME HERE]
-                </cite>
-            </section>
-
-        </div>
-
-        <!-- FOOTER -->
-        <footer class="bg-gray-800 text-white text-center py-6">
-            <p>&copy; 2025 [PUT YOUR SURNAME HERE]. All rights reserved.</p>
-        </footer>
-
+    <!-- Background Blobs -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="blob bg-purple-600 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-blue-600 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2"></div>
     </div>
 
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold text-white tracking-tighter">
+                F<span class="text-brand-accent">U</span>.
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
+                <a href="#journey" class="hover:text-brand-accent transition-colors">Journey</a>
+                <a href="#interests" class="hover:text-brand-accent transition-colors">Interests</a>
+                <a href="#goals" class="hover:text-brand-accent transition-colors">Goals</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-white/10 p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="block hover:text-brand-accent">About</a>
+                <a href="#journey" class="block hover:text-brand-accent">Journey</a>
+                <a href="#interests" class="block hover:text-brand-accent">Interests</a>
+                <a href="#goals" class="block hover:text-brand-accent">Goals</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center relative pt-20" id="home">
+        <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="flex-1 text-center md:text-left fade-in-up">
+                <div class="inline-block overflow-hidden whitespace-nowrap border-r-4 border-brand-accent animate-typing mb-4">
+                    <p class="text-brand-accent font-semibold tracking-wide text-lg md:text-xl">HELLO FELLOW HUMAN</p>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6">
+                    I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">Frederick Lael</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed animate-float">
+                    A chill guy, a growing teen-adult, and an aspiring tech innovator. Exploring the "why" and "how" of the world.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#about" class="px-8 py-3 bg-brand-accent text-brand-dark font-bold rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-lg shadow-brand-accent/25">
+                        Get to Know Me
+                    </a>
+                    <a href="#goals" class="px-8 py-3 border border-gray-600 rounded-full hover:border-brand-accent hover:text-brand-accent transition-colors">
+                        My Vision
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex-1 flex justify-center fade-in-up" style="transition-delay: 0.2s;">
+                <div class="relative w-72 h-72 md:w-96 md:h-96 animate-float-delayed">
+                    <div class="absolute outer-vinyl rounded-full"></div>
+                    <div class="absolute inner-vinyl rounded-full"></div>
+                    
+                    <div class="absolute inset-0 m-auto w-64 h-64 md:w-80 md:h-80 bg-gray-800 rounded-full overflow-hidden border-4 border-brand-dark shadow-2xl flex items-center justify-center group">
+                        <div class="bg-gradient-to-br from-gray-700 to-gray-900 w-full h-full flex flex-col items-center justify-center text-center p-0">
+                            <!-- Profile image: replace 'pfp.jpg' with your image filename or URL -->
+                            <img id="profile-img" src="pfp.jpg" alt="Frederick Unabia" class="rounded-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black/20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Who Am I?</h2>
+                <div class="h-1 w-20 bg-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-up">
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-brand-accent/50 transition-colors animate-float">
+                        <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-fingerprint text-brand-accent mr-2"></i> The Introduction</h3>
+                        <p class="leading-relaxed text-gray-300">
+                            I’m <strong class="text-white">Frederick Lael P. Unabia</strong>. A Chill Guy who likes to socialize when I like to, exploring various topics about life, and trying out different things as a growing teen-adulthood. 
+                            <br><br>
+                            I believe in balance working hard and playing smart on my goals while keeping a relaxed perspective amidst chaos of life.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-brand-secondary/50 transition-colors animate-float-delayed">
+                        <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-child text-brand-secondary mr-2"></i> Early Life</h3>
+                        <p class="leading-relaxed text-gray-300">
+                            It all started <strong class="text-white">May 22, 2007</strong>, in Iligan City. As a child, I traveled a lot and was intensely curious about how the world revolved and why people are people. 
+                            <br><br>
+                            At age 10, getting my first phone shifted my mindset. I stopped just playing and started asking: <em class="text-brand-secondary">"How do people build things?"</em> and <em class="text-brand-secondary">"Why does that happen?"</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey / Education Section (Updated with Modal Triggers) -->
+    <section id="journey" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Education Journey</h2>
+                <p class="text-gray-400">The path of learning that brought me here. <span class="text-brand-accent text-sm block mt-1">(Click schools to see memories)</span></p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-accent via-brand-secondary to-transparent md:-ml-0.5"></div>
+
+                <!-- Elementary -->
+                <div class="relative pl-12 md:pl-0 mb-12 md:flex md:justify-between items-center group fade-in-up">
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand-dark border-4 border-brand-accent rounded-full -translate-x-[14px] md:-translate-x-1/2 z-10"></div>
+                    
+                    <div class="md:w-[45%] md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">Elementary School</h3>
+                        <p class="text-sm text-gray-500 mb-2">The Foundation</p>
+                    </div>
+                    <div class="md:w-[45%] md:pl-12 mt-2 md:mt-0">
+                        <div class="bg-white/5 p-4 rounded-lg border border-white/10 animate-float">
+                                <div class="clickable-school font-semibold text-gray-200 hover:text-brand-accent transition-colors block w-full text-left mb-2 p-1 hover:bg-white/5 rounded">
+                                    Tambo Central School (Grades 1-4)
+                                </div>
+                                <div class="clickable-school font-semibold text-gray-200 hover:text-brand-accent transition-colors block w-full text-left p-1 hover:bg-white/5 rounded">
+                                    Immaculate Heart of Mary Academy (Grades 5-6)
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="relative pl-12 md:pl-0 mb-12 md:flex md:flex-row-reverse md:justify-between items-center group fade-in-up">
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand-dark border-4 border-brand-secondary rounded-full -translate-x-[14px] md:-translate-x-1/2 z-10"></div>
+                    
+                    <div class="md:w-[45%] md:text-left md:pl-12">
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-secondary transition-colors">High School</h3>
+                        <p class="text-sm text-gray-500 mb-2">Secondary Education</p>
+                    </div>
+                    <div class="md:w-[45%] md:text-right md:pr-12 mt-2 md:mt-0">
+                        <div class="bg-white/5 p-4 rounded-lg border border-white/10 inline-block text-left md:text-right w-full animate-float-delayed">
+                            <button onclick="openEducationModal('ice')" class="clickable-school font-semibold text-gray-200 hover:text-brand-secondary transition-colors w-full md:text-right text-left p-1 hover:bg-white/5 rounded">
+                                Iligan City East National Highschool <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- College -->
+                <div class="relative pl-12 md:pl-0 mb-12 md:flex md:justify-between items-center group fade-in-up">
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand-accent border-4 border-white rounded-full -translate-x-[14px] md:-translate-x-1/2 z-10 animate-pulse"></div>
+                    
+                    <div class="md:w-[45%] md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white text-brand-accent">College</h3>
+                        <p class="text-sm text-brand-accent mb-2">Currently Ongoing</p>
+                    </div>
+                    <div class="md:w-[45%] md:pl-12 mt-2 md:mt-0">
+                        <div class="bg-gradient-to-r from-brand-accent/10 to-transparent p-4 rounded-lg border-l-4 border-brand-accent animate-float">
+                            <button onclick="openEducationModal('msu')" class="clickable-school font-bold text-xl text-white hover:text-brand-accent transition-colors w-full text-left p-1 rounded">
+                                MSU - IIT <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                            </button>
+                            <p class="text-sm text-gray-400 pl-1">Mindanao State University - Iligan Institute of Technology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="interests" class="py-20 bg-brand-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4 text-center fade-in-up">Hobbies & Interests</h2>
+            <p class="text-gray-400 text-center mb-12 text-sm fade-in-up">Click on a card to explore</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="hobby-grid">
+                <!-- 1. Gaming -->
+                <div class="hobby-card bg-white/5 p-6 rounded-xl border border-white/5 hover:border-brand-accent/50 fade-in-up" 
+                     data-image="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=400&q=80">
+                    <div class="hobby-content">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mb-4 text-purple-400 icon-container shrink-0">
+                            <i class="fas fa-gamepad text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Gaming</h3>
+                            <p class="text-gray-400 text-sm hobby-desc">Playing games, isn't just about the game.It's how you control and narrate yourself in the digital world, making endless possibilities within.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2. Music -->
+                <div class="hobby-card bg-white/5 p-6 rounded-xl border border-white/5 hover:border-brand-accent/50 fade-in-up" 
+                     style="transition-delay: 0.1s;"
+                     data-image="music.jpg">
+                    <div class="hobby-content">
+                        <div class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center mb-4 text-pink-400 icon-container shrink-0">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Music</h3>
+                            <p class="text-gray-400 text-sm hobby-desc">Listening is part of my life, without it, I'm not living.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3. Photography -->
+                <div class="hobby-card bg-white/5 p-6 rounded-xl border border-white/5 hover:border-brand-accent/50 fade-in-up" 
+                     style="transition-delay: 0.2s;"
+                     data-image="photography.jpg">
+                    <div class="hobby-content">
+                        <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center mb-4 text-cyan-400 icon-container shrink-0">
+                            <i class="fas fa-camera text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Photography</h3>
+                            <p class="text-gray-400 text-sm hobby-desc">Capturing the moments we once experience, and feeling the nostalgia after we lived through it.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4. Gym / Workout -->
+                <div class="hobby-card bg-white/5 p-6 rounded-xl border border-white/5 hover:border-brand-accent/50 fade-in-up" 
+                     style="transition-delay: 0.3s;"
+                     data-image="gym.jpg">
+                    <div class="hobby-content">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mb-4 text-blue-400 icon-container shrink-0">
+                            <i class="fas fa-dumbbell text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Gym / Workout</h3>
+                            <p class="text-gray-400 text-sm hobby-desc">Staying fit and healthy is my way to live a good life. Health is wealth.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5. Nature -->
+                <div class="hobby-card bg-white/5 p-6 rounded-xl border border-white/5 hover:border-brand-accent/50 fade-in-up" 
+                     style="transition-delay: 0.4s;"
+                     data-image="nature.jpg">
+                    <div class="hobby-content">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mb-4 text-green-400 icon-container shrink-0">
+                            <i class="fas fa-tree text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Nature</h3>
+                            <p class="text-gray-400 text-sm hobby-desc">Disconnecting from technology to recharge, hike, and appreciate natural beauty.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6. Literature -->
+                <div class="hobby-card bg-white/5 p-6 rounded-xl border border-white/5 hover:border-brand-accent/50 fade-in-up" 
+                     style="transition-delay: 0.5s;"
+                     data-image="manhwa.jpg">
+                    <div class="hobby-content">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center mb-4 text-yellow-400 icon-container shrink-0">
+                            <i class="fas fa-book-open text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Literature</h3>
+                            <p class="text-gray-400 text-sm hobby-desc">Reading various genres to expand my perspective and learn from different people stories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="py-20 bg-gradient-to-b from-brand-dark to-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-16 text-center fade-in-up">Goals in Life</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Present -->
+                <div class="fade-in-up h-full">
+                    <div class="group relative bg-gray-900 rounded-2xl p-8 border border-white/10 hover:border-brand-accent transition-colors h-full animate-float">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl font-display font-bold">1</div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">The Present</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mb-6">Explore & Learn</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-accent mt-1 mr-3"></i>
+                                <span>Create various things regarding my course.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-accent mt-1 mr-3"></i>
+                                <span>Graduate College.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                                <span class="text-white font-semibold">Aim for Cum Laude.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Mid Term -->
+                <div class="fade-in-up h-full" style="transition-delay: 0.2s;">
+                    <div class="group relative bg-gray-900 rounded-2xl p-8 border border-white/10 hover:border-brand-secondary transition-colors h-full animate-float-delayed">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl font-display font-bold">2</div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brand-secondary transition-colors">The Grind</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mb-6">Age 22 - 27</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-briefcase text-brand-secondary mt-1 mr-3"></i>
+                                <span>Find a stable job & make connections.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-building text-brand-secondary mt-1 mr-3"></i>
+                                <span>Build businesses.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-laptop-code text-brand-secondary mt-1 mr-3"></i>
+                                <span>Own a SaaS Product.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line text-brand-secondary mt-1 mr-3"></i>
+                                <span>Active Trading.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Long Term -->
+                <div class="fade-in-up h-full" style="transition-delay: 0.4s;">
+                    <div class="group relative bg-gray-900 rounded-2xl p-8 border border-white/10 hover:border-purple-400 transition-colors h-full animate-float">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl font-display font-bold">3</div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Post Worklife</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mb-6">Age 27+</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-heart text-purple-400 mt-1 mr-3"></i>
+                                <span>Live a fulfilling life.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plane text-purple-400 mt-1 mr-3"></i>
+                                <span>Resign and travel the world.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-hands-helping text-purple-400 mt-1 mr-3"></i>
+                                <span>Help people in Coding, Tech, and Finance.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10 fade-in-up">
+            <i class="fas fa-quote-left text-4xl text-gray-600 mb-6"></i>
+            <h2 class="text-2xl md:text-4xl font-serif italic text-gray-200 leading-relaxed max-w-4xl mx-auto">
+                "He who has a why to live can bear almost any how."
+            </h2>
+            <p class="mt-6 text-brand-accent font-display font-bold uppercase tracking-widest">— Friedrich Nietzsche</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="year"></span> Frederick Lael P. Unabia. All Rights Reserved.
+            </p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Education Modal Overlay -->
+    <div id="edu-modal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center hidden p-4">
+        <div class="bg-gray-900 border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl relative">
+            
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-6 border-b border-white/10 bg-gray-900/50">
+                <h3 id="modal-title" class="text-2xl font-display font-bold text-white">School Name</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="overflow-y-auto custom-scrollbar flex-1">
+                
+                <!-- Gallery Section -->
+                <div class="relative bg-black h-64 md:h-96 group">
+                    <div id="gallery-container" class="w-full h-full flex items-center justify-center">
+                        <!-- Slides injected here via JS -->
+                    </div>
+                    
+                    <!-- Controls -->
+                    <button id="gallery-prev" onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-brand-accent/80 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all transform hover:scale-110">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="gallery-next" onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-brand-accent/80 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all transform hover:scale-110">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Dots -->
+                    <div id="gallery-dots" class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                        <!-- Dots injected here -->
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="p-8">
+                    <p id="modal-desc" class="text-gray-300 leading-relaxed text-lg">
+                        <!-- Description injected here -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script src="script.js"></script>
 </body>
 </html>
