@@ -1,2 +1,2 @@
 # Autobiography
-Hi I'm Frederick Lael Unabia - BSCA MSU-IIT
+Hi I'm Frederick Lael Unabia - BSCA
